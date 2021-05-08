@@ -1,12 +1,14 @@
 <template>
-  <div id="app" class="flex items-start justify-center h-screen bg-violet-400">
+  <div id="app" class="flex flex-col items-start h-screen bg-violet-400">
     <Header/>
+    <Main/>
     <Footer/>
   </div>
 </template>
 
 <script>
 import Header from '@/components/header'
+import Main from '@/components/main'
 import Footer from '@/components/footer'
 
 export default {
@@ -14,6 +16,7 @@ export default {
   title: 'Nubank | Clone',
   components: {
     Header,
+    Main,
     Footer,
   }
 }

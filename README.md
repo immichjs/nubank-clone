@@ -1,20 +1,20 @@
-# Vue Tailwind Template
+# Nubank Clone
 
-Criei este repositório para me ajudar na hora de desenvolver uma aplicação, pois acaba facilitando muito toda a configuração do ambiente.
+O intuíto desse projeto, é clonar o app do Nubank aos poucos, primeiramente a interface e assim que possível melhorar as funcionalidades parecidas com a do próprio app.
 
 <p align="center">
-    <img src="https://i.imgur.com/g1Ev9cH.png">
+    <img src="https://i.imgur.com/AXOixPt.png">
 </p>
 
 ## Começando
 
-Para inicilizar e usar este template, é necessário ter duas ferramentas instaladas em sua máquina, o [Git](https://git-scm.com/) e o [Node.js](https://nodejs.org/).
+Para inicilizar esse projeto, é necessário ter duas ferramentas instaladas em sua máquina, o [Git](https://git-scm.com/) e o [Node.js](https://nodejs.org/).
 
 - Clone o projeto com os comando abaixo:
 ```
-$ git clone git@github.com:immichjs/vue-tailwind-template.git
+$ git clone git@github.com:immichjs/nubank-clone.git
 
-$ cd vue-tailwind-template
+$ cd nubank-clone
 ```
 
 - Logo após, instale todas as dependencias com:
@@ -36,6 +36,8 @@ Leia as documentações abaixo para continuar seu desenvolvimento com essas tecn
 
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Vue.js](https://br.vuejs.org/)
+- [Vuex](https://vuex.vuejs.org/ptbr/guide/)
+- [Boxicons](https://boxicons.com/usage/)
 
-<p align="center">Template feito com 💖 por Mich.</p>
+<p align="center">Feito com 💖 por Mich</p>
 

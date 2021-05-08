@@ -5,6 +5,22 @@
 @tailwind utilities;
 
 @layer utilities {
+  .text-white-default {
+    color: #FEFCFD;
+  }
+
+  .text-gray-default {
+    color: #6A6A6A;
+  }
+
+  .text-invoice {
+    color: #32A3D5;
+  }
+
+  .text-avaliable {
+    color: #27804E;
+  }
+
   @variants responsive {
     .bg-violet-200 {
       background-color: #9824C7;
@@ -18,20 +34,8 @@
       background-color: #F6F5F5;
     }
 
-    .text-white-default {
-      color: #FEFCFD;
-    }
-
-    .text-gray-default {
-      color: #6A6A6A;
-    }
-
-    .text-invoice {
-      color: #32A3D5;
-    }
-
-    .text-avaliable {
-      color: #27804E;
+    .h-70 {
+      height: 70%;
     }
 
     .text-balance {
