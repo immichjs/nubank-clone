@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import App from './App.vue'
-import title from './assets/mixins/title'
+import VueMeta from 'vue-meta'
+import store from './store'
 
 import 'boxicons'
 import './assets/css/index.css'
-import store from './store'
 
-Vue.mixin(title)
+Vue.use(VueMeta, { refreshOnceOnNavigation: true })
 Vue.config.productionTip = false
 
 new Vue({

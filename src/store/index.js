@@ -9,7 +9,9 @@ export default new Vuex.Store({
     visibleAccountValue: true,
 
     currentInvoice: 69.81,
-    avaliableLimit: 46.39,
+    availableLimit: 46.39,
+    
+    balanceAvailable: 921928.12,
 
     footerListItems: [
       { icon: 'move', name: 'Pix', id: 0 },
@@ -32,7 +34,9 @@ export default new Vuex.Store({
     getVisibleAccountValue: state => state.visibleAccountValue,
 
     currentInvoice: state => (state.currentInvoice).toString().replace('.', ','),
-    avaliableLimit: state => (state.avaliableLimit).toString().replace('.', ','),
+    availableLimit: state => (state.availableLimit).toString().replace('.', ','),
+    
+    balanceAvailable: state => (state.balanceAvailable).toString().replace('.', ','),
 
     getFooterListItems: state => state.footerListItems,
   },

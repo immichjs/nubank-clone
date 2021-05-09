@@ -1,5 +1,5 @@
 {
-  "name": "vue-tailwind-template",
+  "name": "nubank-clone",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,6 +11,7 @@
     "boxicons": "^2.0.7",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
+    "vue-meta": "^2.4.0",
     "vuex": "^3.4.0"
   },
   "devDependencies": {

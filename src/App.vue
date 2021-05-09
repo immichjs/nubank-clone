@@ -13,7 +13,12 @@ import Footer from '@/components/footer'
 
 export default {
   name: 'App',
-  title: 'Nubank | Clone',
+  metaInfo: {
+    title: 'Nubank | Clone',
+    htmlAttrs: {
+      lang: 'pt-br',
+    }
+  },
   components: {
     Header,
     Main,
