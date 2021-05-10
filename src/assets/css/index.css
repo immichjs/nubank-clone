@@ -21,6 +21,14 @@
     color: #27804E;
   }
 
+  .bg-icon {
+    background-color: #EBD8FB;
+  }
+
+  .text-violet-400 {
+    color: #8A03BE;
+  }
+
   @variants responsive {
     .bg-violet-200 {
       background-color: #9824C7;
@@ -36,6 +44,10 @@
 
     .h-70 {
       height: 70%;
+    }
+
+    .h-30 {
+      height: 7.5rem;
     }
 
     .text-balance {

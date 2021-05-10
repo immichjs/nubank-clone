@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="flex flex-col items-start h-screen bg-violet-400">
+  <div id="app" class="flex flex-col items-start h-screen bg-violet-400 gap-4">
     <Header/>
     <Main/>
     <Footer/>

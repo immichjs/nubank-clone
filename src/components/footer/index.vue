@@ -1,5 +1,5 @@
 <template>
-  <footer class="fixed bottom-0 left-0 w-full h-36 flex justify-center items-center px-4 bg-violet-400">
+  <footer class="fixed bottom-0 left-0 w-full h-30 flex justify-center items-center px-4 bg-violet-400">
     <div class="overflow-x-scroll">
       <ul class="grid gap-2 grid-flow-col">
         <li v-for="item in getFooterListItems" :key="item.id">
