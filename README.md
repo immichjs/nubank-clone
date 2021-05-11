@@ -5,6 +5,7 @@ O intuíto desse projeto, é clonar o app do Nubank aos poucos, primeiramente a 
 <p align="start">
     <img src="https://i.imgur.com/AXOixPt.png">
     <img src="https://i.imgur.com/HuqhfSH.png">
+    <img src="https://i.imgur.com/4BsdHHD.png">
 </p>
 
 ## Começando
