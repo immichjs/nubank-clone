@@ -3,15 +3,15 @@
     <div class="flex items-center justify-between h-16">
       <h1 class="text-2xl font-bold text-white-default text-ellipsis w-7/12">Olá, {{ getUserName }}</h1>
       <div class="flex gap-2">
-        <div :class="configIcons.divClasses" @click="changeVisibilityAccountValue" v-if="getVisibleAccountValue">
+        <div :class="configIcons.divClasses" @click="changeVisibilityStatusIcon" v-if="balanceVisibilityStatus">
           <box-icon
-            name='show'
+            name='hide'
             :color="configIcons.colorIcons"
           />
         </div>
-        <div :class="configIcons.divClasses" @click="changeVisibilityAccountValue" v-else>
+        <div :class="configIcons.divClasses" @click="changeVisibilityStatusIcon" v-else>
           <box-icon
-            name='hide'
+            name='show'
             :color="configIcons.colorIcons"
           />
         </div>
@@ -41,12 +41,12 @@ export default {
   computed: {
     ...mapGetters([
       'getUserName',
-      'getVisibleAccountValue',
+      'balanceVisibilityStatus',
     ])
   },
   methods: {
     ...mapMutations([
-      'changeVisibilityAccountValue'
+      'changeVisibilityStatusIcon'
     ])
   }
 }

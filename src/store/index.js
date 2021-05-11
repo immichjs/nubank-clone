@@ -6,7 +6,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     userName: 'Michel França',
-    visibleAccountValue: true,
+    balanceVisibilityStatus: true,
 
     currentInvoice: 69.81,
     availableLimit: 46.39,
@@ -31,22 +31,18 @@ export default new Vuex.Store({
   },
   getters: {
     getUserName: state => state.userName,
-    getVisibleAccountValue: state => state.visibleAccountValue,
+    balanceVisibilityStatus: state => state.balanceVisibilityStatus,
 
-    currentInvoice: state => (state.currentInvoice).toString().replace('.', ','),
-    availableLimit: state => (state.availableLimit).toString().replace('.', ','),
+    currentInvoice: state => state.currentInvoice,
+    availableLimit: state => state.availableLimit,
     
-    balanceAvailable: state => (state.balanceAvailable).toString().replace('.', ','),
+    balanceAvailable: state => state.balanceAvailable,
 
     getFooterListItems: state => state.footerListItems,
   },
   mutations: {
-    changeVisibilityAccountValue (state) {
-      state.visibleAccountValue = !state.visibleAccountValue
-    }
+    changeVisibilityStatusIcon (state) {
+      state.balanceVisibilityStatus = !state.balanceVisibilityStatus
+    },
   },
-  actions: {
-  },
-  modules: {
-  }
 })

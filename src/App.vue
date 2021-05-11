@@ -11,6 +11,8 @@ import Header from '@/components/header'
 import Main from '@/components/main'
 import Footer from '@/components/footer'
 
+import { mapGetters, mapMutations } from 'vuex'
+
 export default {
   name: 'App',
   metaInfo: {
@@ -19,10 +21,20 @@ export default {
       lang: 'pt-br',
     }
   },
+  computed: {
+    ...mapGetters([
+      'balanceVisibilityStatus'
+    ])
+  },
   components: {
     Header,
     Main,
     Footer,
+  },
+  methods: {
+    ...mapMutations([
+      'changeVisibilityStatus'
+    ])
   }
 }
 </script>

@@ -6,7 +6,8 @@
     </div>
     <p class="text-sm">Saldo disponível</p>
     <div class="flex flex-col gap-1">
-      <span class="text-2xl font-bold text-balance">R$ {{ balanceAvailable }}</span>
+      <span class="text-2xl font-bold text-balance" v-if="balanceVisibilityStatus">R$ {{ balanceAvailable | BRL }}</span>
+      <span v-else class="bg-ocult h-8"></span>
     </div>
   </div>
 </template>
@@ -14,11 +15,15 @@
 <script>
 import { mapGetters } from 'vuex'
 
+import BRL from '@/mixins/brlCoin'
+
 export default {
   computed: {
     ...mapGetters([
       'balanceAvailable',
+      'balanceVisibilityStatus',
     ])
-  }
+  },
+  mixins: [BRL]
 }
 </script>

@@ -5,22 +5,32 @@
       <span>Cartão de Crédito</span>
     </div>
     <p class="text-sm">Fatura Atual</p>
-    <div class="flex flex-col gap-1">
-      <span class="text-2xl font-bold text-invoice">R$ {{ currentInvoice }}</span>
-      <p class="text-sm">Limite disponível <span class="text-available font-bold">R$ {{ availableLimit }}</span></p>
+    <div class="flex flex-col gap-1" v-if="balanceVisibilityStatus">
+      <span class="text-2xl font-bold text-invoice">R$ {{ currentInvoice | BRL }}</span>
+      <p class="text-sm">Limite disponível <span class="text-available font-bold">R$ {{ availableLimit | BRL }}</span></p>
     </div>
+    <div v-else class="bg-ocult h-14"></div>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapMutations } from 'vuex'
+
+import BRL from '@/mixins/brlCoin'
 
 export default {
   computed: {
     ...mapGetters([
       'currentInvoice',
       'availableLimit',
+      'balanceVisibilityStatus'
     ])
-  }
+  },
+  methods: {
+    ...mapMutations([
+      'changeVisibilityStatus',
+    ])
+  },
+  mixins: [BRL]
 }
 </script>
