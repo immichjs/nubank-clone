@@ -2,8 +2,9 @@
 
 O intuíto desse projeto, é clonar o app do Nubank aos poucos, primeiramente a interface e assim que possível melhorar as funcionalidades parecidas com a do próprio app.
 
-<p align="center">
+<p align="start">
     <img src="https://i.imgur.com/AXOixPt.png">
+    <img src="https://i.imgur.com/HuqhfSH.png">
 </p>
 
 ## Começando
