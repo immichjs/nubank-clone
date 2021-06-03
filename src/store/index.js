@@ -8,10 +8,11 @@ export default new Vuex.Store({
     userName: 'Michel França',
     balanceVisibilityStatus: true,
 
-    currentInvoice: 69.81,
-    availableLimit: 46.39,
+    currentInvoice: 2432,
+    availableLimit: 92832,
     
-    balanceAvailable: 921928.12,
+    balanceAvailable: 24213,
+    loanAvailable: 8700,
 
     footerListItems: [
       { icon: 'move', name: 'Pix', id: 0 },
@@ -37,6 +38,7 @@ export default new Vuex.Store({
     availableLimit: state => state.availableLimit,
     
     balanceAvailable: state => state.balanceAvailable,
+    loanAvailable: state => state.loanAvailable,
 
     getFooterListItems: state => state.footerListItems,
   },

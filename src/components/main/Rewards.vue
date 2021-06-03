@@ -9,8 +9,8 @@
       >
       <span class="text-violet-400 text-xl">Rewards</span>
     </div>
-    <p class="font-medium">Apague compras com pontos que nunca expiram.</p>
-    <ToMeetButton/>
+    <p class=" text-sm font-medium">Apague compras com pontos que nunca expiram.</p>
+    <ToMeetButton :description="'Conhecer'" :uppercase="true"/>
   </div>
 </template>
 

@@ -9,8 +9,8 @@
       >
       <span class="text-violet-400 text-xl">Seguro de vida</span>
     </div>
-    <p class="font-medium">Conheça Nubank Vida: um seguro simples e que cabe no bolso.</p>
-    <ToMeetButton/>
+    <p class="text-sm font-medium">Conheça Nubank Vida: um seguro simples e que cabe no bolso.</p>
+    <ToMeetButton :description="'Conhecer'" :uppercase="true"/>
   </div>
 </template>
 
