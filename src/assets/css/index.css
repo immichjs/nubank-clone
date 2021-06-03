@@ -53,5 +53,35 @@
     .text-balance {
       color: #171717;
     }
+
+    .scroll-y-none::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scroll-y-style::-webkit-scrollbar {
+      width: 6px;
+      background: transparent;
+      display: block;
+    }
+    
+    .scroll-y-style::-webkit-scrollbar-thumb {
+      background: #9824C7;
+      border-radius: 50px;
+    }
+
+    .scroll-x-none::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scroll-x-style::-webkit-scrollbar {
+      height: 4px;
+      background: transparent;
+      display: block;
+    }
+    
+    .scroll-x-style::-webkit-scrollbar-thumb {
+      background: #9824C7;
+      border-radius: 50px;
+    }
   }
 }

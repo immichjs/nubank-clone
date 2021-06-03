@@ -1,5 +1,5 @@
 <template>
-  <main class="flex flex-col items-center w-full px-4 overflow-y-scroll h-70 gap-4">
+  <main class="flex flex-col items-center w-full px-4 overflow-y-scroll scroll-y-none md:scroll-y-style h-70 gap-4">
     <WhatsApp/>
     <CreditCard/>
     <NuConta/>

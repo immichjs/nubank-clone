@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="flex flex-col items-start h-screen bg-violet-400 gap-4">
+  <div id="app" class="relative flex flex-col items-start h-screen bg-violet-400 gap-4 bg-purple-100">
     <Header/>
     <Main/>
     <Footer/>
@@ -40,8 +40,14 @@ export default {
 </script>
 
 <style lang="postcss">
+body {
+  background: #EDE9FE;
+  display: flex;
+  justify-content: center;
+}
 #app {
   font-family: 'Montserrat', sans-serif;
+  width: 375px;
 }
 
 .text-ellipsis {
