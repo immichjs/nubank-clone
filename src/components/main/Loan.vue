@@ -8,7 +8,7 @@
       <p class="text-sm font-medium">Valor disponível até</p>
       <p class="font-bold">{{ loanValue | currency }}</p>
     </div>
-    <div v-else class="bg-ocult h-12"></div>
+    <div v-else class="bg-ocult h-11"></div>
     <ToMeetButton :description="'Simular empréstimo'" :uppercase="true"/>
   </div>
 </template>

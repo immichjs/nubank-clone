@@ -4,6 +4,7 @@
         :class="[
             uppercase ? 'uppercase' : '',
         ]"
+        @click="aviso"
     >{{ description }}</button>
 </template>
 
@@ -14,5 +15,10 @@ export default {
         description: { type: String },
         uppercase: { type: Boolean },
     },
+    methods: {
+        aviso() {
+            alert('Esse funcionamento ainda está em desenvolvimento.')
+        }
+    }
 }
 </script>

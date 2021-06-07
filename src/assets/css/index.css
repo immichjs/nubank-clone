@@ -26,16 +26,16 @@
   }
 
   .text-violet-400 {
-    color: #8A03BE;
+    color: #9333C2;
   }
 
   @variants responsive {
     .bg-violet-200 {
-      background-color: #9824C7;
+      background-color: #9028D7;
     }
 
     .bg-violet-400 {
-      background-color: #8A03BE;
+      background-color: #830AD1;
     }
 
     .bg-ocult {
@@ -43,7 +43,7 @@
     }
 
     .h-70 {
-      height: 70%;
+      height: calc(100vh - 248px);
     }
 
     .h-30 {

@@ -7,7 +7,7 @@
     <p class="text-sm">Saldo disponível</p>
     <div class="flex flex-col gap-1">
       <span class="text-2xl font-bold text-balance" v-if="balanceVisibilityStatus">{{ balanceAvailable | currency }}</span>
-      <span v-else class="bg-ocult h-10"></span>
+      <span v-else class="bg-ocult h-8"></span>
     </div>
   </div>
 </template>
