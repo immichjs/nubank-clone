@@ -1,6 +1,6 @@
 <template>
   <footer class="fixed bottom-0 pb-4 w-full flex justify-center items-center bg-violet-400">
-    <div class="overflow-x-scroll scroll-x-none">
+    <div v-dragscroll class=" overflow-x-scroll scroll-x-none">
       <ul class="grid gap-2 grid-flow-col">
         <li v-for="item in getFooterListItems" :key="item.id">
           <div class="flex flex-col bg-violet-200 w-24 p-2 rounded-sm h-24 justify-between">

@@ -2,11 +2,13 @@ import Vue from 'vue'
 import App from './App.vue'
 import VueMeta from 'vue-meta'
 import VueCurrencyFilter from 'vue-currency-filter'
+import VueDragscroll from 'vue-dragscroll'
 import store from './store'
 
 import 'boxicons'
 import './assets/css/index.css'
 
+Vue.use(VueDragscroll)
 Vue.use(VueCurrencyFilter, {
   symbol : 'R$',
   thousandsSeparator: '.',
