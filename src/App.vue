@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="h-screen flex flex-col items-start bg-violet-400 gap-4 bg-purple-100">
+  <div id="app" class="h-screen w-full flex flex-col justify-between bg-violet-400 bg-purple-100">
     <Header/>
     <Main/>
     <Footer/>
@@ -16,8 +16,12 @@ import { mapGetters, mapMutations } from 'vuex'
 export default {
   name: 'App',
   created () {
-    const name = prompt('Digite o seu nome abaixo')
+    const name = prompt('Digite o seu nome e sobrenome')
+    const balance = prompt('Digite o saldo desejado')
+    const limit = prompt('Digite o limite desejado')
     this.SET_USERNAME(name)
+    this.SET_BALANCE(balance)
+    this.SET_LIMIT(limit)
   },
   metaInfo: {
     title: 'Nubank | Clone',
@@ -39,6 +43,8 @@ export default {
     ...mapMutations([
       'changeVisibilityStatus',
       'SET_USERNAME',
+      'SET_LIMIT',
+      'SET_BALANCE'
     ])
   }
 }
@@ -52,7 +58,12 @@ body {
 }
 #app {
   font-family: 'Montserrat', sans-serif;
-  width: 375px;
+}
+
+@media only screen and (min-width: 768px) {
+  #app {
+    width: 375px;
+  }
 }
 
 .text-ellipsis {

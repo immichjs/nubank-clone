@@ -5,14 +5,14 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    userName: 'Michel França',
+    userName: 'Anon',
     balanceVisibilityStatus: true,
 
-    currentInvoice: 2432,
-    availableLimit: 92832,
+    currentInvoice: 0,
+    availableLimit: 0,
     
-    balanceAvailable: 24213,
-    loanAvailable: 8700,
+    balanceAvailable: 0,
+    loanAvailable: 51000,
 
     footerListItems: [
       { icon: 'move', name: 'Pix', id: 0 },
@@ -46,6 +46,8 @@ export default new Vuex.Store({
     changeVisibilityStatusIcon (state) {
       state.balanceVisibilityStatus = !state.balanceVisibilityStatus
     },
-    SET_USERNAME: (state, payload) => state.userName = payload
+    SET_USERNAME: (state, payload) => state.userName = payload || state.userName,
+    SET_LIMIT: (state, payload) => state.availableLimit = Number(payload) || 200,
+    SET_BALANCE: (state, payload) => state.balanceAvailable = Number(payload) || 990,
   },
 })

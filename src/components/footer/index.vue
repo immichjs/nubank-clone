@@ -1,6 +1,6 @@
 <template>
-  <footer class="fixed bottom-0 pb-4 w-full flex justify-center items-center bg-violet-400">
-    <div v-dragscroll class=" overflow-x-scroll scroll-x-none">
+  <footer class="py-4 bg-violet-400">
+    <div v-dragscroll class="overflow-hidden scroll-x-none">
       <ul class="grid gap-2 grid-flow-col">
         <li v-for="item in getFooterListItems" :key="item.id">
           <div class="flex flex-col bg-violet-200 w-24 p-2 rounded-sm h-24 justify-between">
@@ -32,10 +32,6 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-footer {
-  width: 375px;
-}
-
 li:first-child {
   @apply pl-4;
 }

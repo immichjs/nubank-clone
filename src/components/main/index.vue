@@ -1,5 +1,5 @@
 <template>
-  <main v-dragscroll class="flex flex-col items-center w-full px-4 overflow-y-scroll scroll-y-none h-70 gap-4">
+  <main v-dragscroll class="flex flex-col items-center w-full overflow-hidden px-4 scroll-y-none h-70 gap-4">
     <WhatsApp/>
     <CreditCard/>
     <NuConta/>
