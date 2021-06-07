@@ -1,5 +1,5 @@
 <template>
-  <header class="w-full px-4 pt-10 bg-violet-400">
+  <header class="w-full px-4 pt-8 bg-violet-400">
     <div class="flex items-center justify-between h-16 truncate">
       <h1 class="text-2xl font-bold text-white-default w-1/2 truncate">Olá, {{ username }}</h1>
       <div class="flex gap-2">
