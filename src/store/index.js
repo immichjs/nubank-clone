@@ -31,7 +31,7 @@ export default new Vuex.Store({
     ],
   },
   getters: {
-    getUserName: state => state.userName,
+    username: state => state.userName,
     balanceVisibilityStatus: state => state.balanceVisibilityStatus,
 
     currentInvoice: state => state.currentInvoice,
@@ -46,5 +46,6 @@ export default new Vuex.Store({
     changeVisibilityStatusIcon (state) {
       state.balanceVisibilityStatus = !state.balanceVisibilityStatus
     },
+    SET_USERNAME: (state, payload) => state.userName = payload
   },
 })

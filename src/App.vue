@@ -15,6 +15,10 @@ import { mapGetters, mapMutations } from 'vuex'
 
 export default {
   name: 'App',
+  created () {
+    const name = prompt('Digite o seu nome abaixo')
+    this.SET_USERNAME(name)
+  },
   metaInfo: {
     title: 'Nubank | Clone',
     htmlAttrs: {
@@ -23,7 +27,7 @@ export default {
   },
   computed: {
     ...mapGetters([
-      'balanceVisibilityStatus'
+      'balanceVisibilityStatus',
     ])
   },
   components: {
@@ -33,7 +37,8 @@ export default {
   },
   methods: {
     ...mapMutations([
-      'changeVisibilityStatus'
+      'changeVisibilityStatus',
+      'SET_USERNAME',
     ])
   }
 }
