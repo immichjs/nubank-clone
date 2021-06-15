@@ -1,7 +1,8 @@
 <template>
-  <div id="app" class="h-screen w-full flex flex-col justify-between bg-violet-400 bg-purple-100">
+  <div id="app" class="relative h-screen w-full flex flex-col justify-between bg-violet-400 bg-purple-100">
     <Header/>
     <Main/>
+    <VirtualCard/>
     <Footer/>
   </div>
 </template>
@@ -10,6 +11,8 @@
 import Header from '@/components/header'
 import Main from '@/components/main'
 import Footer from '@/components/footer'
+
+import VirtualCard from '@/components/features/VirtualCard'
 
 import { mapGetters, mapMutations } from 'vuex'
 
@@ -38,6 +41,7 @@ export default {
     Header,
     Main,
     Footer,
+    VirtualCard,
   },
   methods: {
     ...mapMutations([

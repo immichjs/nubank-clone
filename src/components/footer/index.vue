@@ -2,7 +2,7 @@
   <footer class="py-4 bg-violet-400">
     <div v-dragscroll class="overflow-hidden scroll-x-none">
       <ul class="grid gap-2 grid-flow-col">
-        <li v-for="item in getFooterListItems" :key="item.id">
+        <li v-for="item in getFooterListItems" :key="item.id" @click="changeState({ name: item.nameState, status: true })" class="cursor-pointer">
           <div class="flex flex-col bg-violet-200 w-24 p-2 rounded-sm h-24 justify-between">
             <box-icon :name="item.icon" color="#fff"/>
             <span class="justify-self-end text-xs font-medium text-white-default">{{ item.name }}</span>
@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapMutations } from 'vuex'
 
 export default {
   name: 'Footer',
@@ -27,6 +27,11 @@ export default {
     ...mapGetters([
       'getFooterListItems'
     ])
+  },
+  methods: {
+    ...mapMutations({
+      changeState: 'changeVirtualCardState'
+    })
   }
 }
 </script>

@@ -30,6 +30,10 @@
   }
 
   @variants responsive {
+    .h-100vh-16px {
+      height: calc(100vh - 16px)
+    },
+
     .bg-violet-200 {
       background-color: #9028D7;
     }

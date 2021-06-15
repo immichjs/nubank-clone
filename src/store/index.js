@@ -7,6 +7,7 @@ export default new Vuex.Store({
   state: {
     userName: 'Anon',
     balanceVisibilityStatus: true,
+    virtualCardStatus: false,
 
     currentInvoice: 0,
     availableLimit: 0,
@@ -15,24 +16,25 @@ export default new Vuex.Store({
     loanAvailable: 51000,
 
     footerListItems: [
-      { icon: 'move', name: 'Pix', id: 0 },
-      { icon: 'barcode', name: 'Pagar', id: 1 },
-      { icon: 'user-plus', name: 'Indicar amigos', id: 2 },
-      { icon: 'coin', name: 'Transferir', id: 3 },
-      { icon: 'coin', name: 'Depositar', id: 4 },
-      { icon: 'donate-heart', name: 'Empréstimos', id: 5 },
-      { icon: 'credit-card', name: 'Cartão virtual', id: 6 },
-      { icon: 'mobile-alt', name: 'Recarga de celular', id: 7 },
-      { icon: 'slider', name: 'Ajudar limite', id: 8 },
-      { icon: 'lock-alt', name: 'Bloquear cartão', id: 10 },
-      { icon: 'coin', name: 'Cobrar', id: 11 },
-      { icon: 'donate-heart', name: 'Doação', id: 12 },
-      { icon: 'help-circle', name: 'Me ajuda', id: 13 },
+      { icon: 'move', name: 'Pix', id: 0, nameState: '' },
+      { icon: 'barcode', name: 'Pagar', id: 1, nameState: '' },
+      { icon: 'user-plus', name: 'Indicar amigos', id: 2, nameState: '' },
+      { icon: 'coin', name: 'Transferir', id: 3, nameState: '' },
+      { icon: 'coin', name: 'Depositar', id: 4, nameState: '' },
+      { icon: 'donate-heart', name: 'Empréstimos', id: 5, nameState: '' },
+      { icon: 'credit-card', name: 'Cartão virtual', id: 6, nameState: 'virtualCardStatus' },
+      { icon: 'mobile-alt', name: 'Recarga de celular', id: 7, nameState: '' },
+      { icon: 'slider', name: 'Ajudar limite', id: 8, nameState: '' },
+      { icon: 'lock-alt', name: 'Bloquear cartão', id: 10, nameState: '' },
+      { icon: 'coin', name: 'Cobrar', id: 11, nameState: '' },
+      { icon: 'donate-heart', name: 'Doação', id: 12, nameState: '' },
+      { icon: 'help-circle', name: 'Me ajuda', id: 13, nameState: '' },
     ],
   },
   getters: {
     username: state => state.userName,
     balanceVisibilityStatus: state => state.balanceVisibilityStatus,
+    virtualCardStatus: state => state.virtualCardStatus,
 
     currentInvoice: state => state.currentInvoice,
     availableLimit: state => state.availableLimit,
@@ -43,9 +45,9 @@ export default new Vuex.Store({
     getFooterListItems: state => state.footerListItems,
   },
   mutations: {
-    changeVisibilityStatusIcon (state) {
-      state.balanceVisibilityStatus = !state.balanceVisibilityStatus
-    },
+    changeVisibilityStatusIcon: state => state.balanceVisibilityStatus = !state.balanceVisibilityStatus,
+    changeVirtualCardState: (state, payload) => state[payload.name] = payload.status,
+
     SET_USERNAME: (state, payload) => state.userName = payload || state.userName,
     SET_LIMIT: (state, payload) => state.availableLimit = Number(payload) || 200,
     SET_BALANCE: (state, payload) => state.balanceAvailable = Number(payload) || 990,
