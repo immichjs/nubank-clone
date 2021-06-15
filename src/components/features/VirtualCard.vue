@@ -1,16 +1,17 @@
 <template>
-  <div class="absolute w-full bottom-0 bg-white h-100vh-16px rounded-t-xl" v-if="vcState">
-    <div class="flex justify-between items-center p-2 rounded-t-xl">
+  <div class="absolute w-full bottom-0 bg-white h-100vh-16px rounded-t-lg" v-if="vcState">
+    <div class="flex justify-between items-center p-2 rounded-t-lg">
       <box-icon name='x' size="md" color="#ccc" class="cursor-pointer" @click="changeState({ name: 'virtualCardStatus', status: false })"></box-icon>
       <h1 class="text-center uppercase text-xs font-semibold text-gray-400">Cartão Virtual</h1>
       <box-icon name="help-circle" color="#ccc"/>
     </div>
-    <div class="bg-violet-400 mt-10 rounded-lg mx-8 px-4 p-4 pb-6 pt-2 flex flex-col gap-6">
+
+    <div class="bg-violet-400 mt-10 rounded-xl mx-8 p-8 flex flex-col gap-6">
       <div class="flex justify-between items-center">
-        <img src="../../assets/img/nubank-logo-white.png" width="64">
-        <img src="../../assets/img/mastercard-logo.png" width="64">
+        <img src="../../assets/img/nubank-logo-white.png" width="32">
+        <img src="../../assets/img/mastercard-logo.png" width="48">
       </div>
-      <div class="flex px-3">
+      <div class="flex">
         <p class="text-justify text-white font-semibold text-xl w-full">5264 6101 4342 5037</p>
         <box-icon name='copy' color="#fff" class="cursor-pointer"></box-icon>
       </div>
