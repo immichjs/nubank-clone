@@ -29,18 +29,19 @@
     color: #9333C2;
   }
 
+  .bg-violet-200 {
+    background-color: #9824C7;
+  }
+
+  .bg-violet-400 {
+    background-color: #830AD1;
+  }
+
+
   @variants responsive {
     .h-100vh-16px {
       height: calc(100vh - 16px)
     },
-
-    .bg-violet-200 {
-      background-color: #9028D7;
-    }
-
-    .bg-violet-400 {
-      background-color: #830AD1;
-    }
 
     .bg-ocult {
       background-color: #F6F5F5;
