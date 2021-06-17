@@ -20,7 +20,7 @@
     <div class="px-14 mt-8">
       <div class="py-3 border-b border-gray-100">
         <span class="text-gray-400 text-xs font-medium">Nome do Titular</span>
-        <p class="font-semibold text-violet-400">Michel F Assis</p>
+        <p class="font-semibold text-violet-400">Anon</p>
       </div>
       <div class="flex justify-between py-3">
         <div>
