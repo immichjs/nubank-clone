@@ -7,6 +7,7 @@ export default new Vuex.Store({
   state: {
     userName: 'Anon',
     balanceVisibilityStatus: true,
+    payStatus: false,
     virtualCardStatus: false,
     loadingState: true,
 
@@ -18,7 +19,7 @@ export default new Vuex.Store({
 
     footerListItems: [
       { icon: 'move', name: 'Pix', id: 0, nameState: '' },
-      { icon: 'barcode', name: 'Pagar', id: 1, nameState: '' },
+      { icon: 'barcode', name: 'Pagar', id: 1, nameState: 'payStatus' },
       { icon: 'user-plus', name: 'Indicar amigos', id: 2, nameState: '' },
       { icon: 'coin', name: 'Transferir', id: 3, nameState: '' },
       { icon: 'coin', name: 'Depositar', id: 4, nameState: '' },
@@ -35,6 +36,7 @@ export default new Vuex.Store({
   getters: {
     username: state => state.userName,
     balanceVisibilityStatus: state => state.balanceVisibilityStatus,
+    payStatus: state => state.payStatus,
     virtualCardStatus: state => state.virtualCardStatus,
     loadingState: state => state.loadingState,
 
@@ -49,6 +51,7 @@ export default new Vuex.Store({
   mutations: {
     changeVisibilityStatusIcon: state => state.balanceVisibilityStatus = !state.balanceVisibilityStatus,
     changeVirtualCardState: (state, payload) => state[payload.name] = payload.status,
+    changePayStatus: (state, payload) => state[payload.name] = status,
     changeLoadingState: (state, payload) => state.loadingState = payload,
 
     SET_USERNAME: (state, payload) => state.userName = payload || state.userName,
@@ -59,7 +62,7 @@ export default new Vuex.Store({
     loading: ({ commit }, payload) => {
       setTimeout(() => {
         commit('changeLoadingState', payload)
-      }, 5000)
+      }, 3000)
     }
   }
 })

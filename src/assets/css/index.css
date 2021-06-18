@@ -37,15 +37,18 @@
     background-color: #830AD1;
   }
 
+  .h-100vh-68px {
+    height: calc(100vh - 68px);
+  }
+  
+  .bg-ocult {
+    background-color: #F6F5F5;
+  }
 
   @variants responsive {
     .h-100vh-16px {
       height: calc(100vh - 16px)
     },
-
-    .bg-ocult {
-      background-color: #F6F5F5;
-    }
 
     .h-70 {
       height: calc(100vh - 250px);

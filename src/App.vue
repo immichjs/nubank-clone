@@ -4,6 +4,7 @@
     <template v-if="!loadingState" >
       <Header/>
       <Main/>
+      <Pay/>
       <VirtualCard/>
       <Footer/>
     </template>
@@ -16,6 +17,7 @@ import Main from '@/components/main'
 import Footer from '@/components/footer'
 
 import Loading from '@/components/features/Loading'
+import Pay from '@/components/features/Pay'
 import VirtualCard from '@/components/features/VirtualCard'
 
 import { mapGetters, mapMutations, mapActions } from 'vuex'
@@ -49,6 +51,7 @@ export default {
     Main,
     Footer,
     Loading,
+    Pay,
     VirtualCard,
   },
   methods: {

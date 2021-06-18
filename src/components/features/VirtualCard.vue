@@ -3,7 +3,7 @@
     <div class="flex justify-between items-center p-2 rounded-t-lg">
       <box-icon name='x' size="md" color="#ccc" class="cursor-pointer" @click="changeState({ name: 'virtualCardStatus', status: false })"></box-icon>
       <h1 class="text-center uppercase text-xs font-semibold text-gray-400">Cartão Virtual</h1>
-      <box-icon name="help-circle" color="#ccc"/>
+      <box-icon name="help-circle" color="#ccc" @click="notWork"/>
     </div>
 
     <div class="bg-violet-400 mt-10 rounded-xl mx-8 p-8 flex flex-col gap-6">
@@ -13,7 +13,7 @@
       </div>
       <div class="flex">
         <p class="text-justify text-white font-semibold text-xl w-full">5264 6101 4342 5037</p>
-        <box-icon name='copy' color="#fff" class="cursor-pointer"></box-icon>
+        <box-icon name='copy' color="#fff" class="cursor-pointer" @click="notWork"></box-icon>
       </div>
     </div>
 
@@ -35,11 +35,11 @@
     </div>
 
     <div class="absolute bottom-0 w-full grid grid-cols-2 p-2 border-t py-4">
-      <div class="flex flex-col items-center border-r gap-4 justify-center">
+      <div class="flex flex-col items-center border-r gap-4 justify-center" @click="notWork">
         <box-icon name='trash-alt' color="#9333C2"></box-icon>
         <span class="text-sm">Apagar Cartão</span>
       </div>
-      <div class="flex flex-col gap-4 items-center justify-center">
+      <div class="flex flex-col gap-4 items-center justify-center" @click="notWork">
         <box-icon name='lock-open-alt' color="#9333C2"></box-icon>
         <span class="text-sm ">Bloquear Cartão</span>
       </div>
@@ -49,8 +49,11 @@
 
 <script>
 import { mapGetters, mapMutations } from 'vuex'
+import { operationNotice } from '../../assets/mixin/index.js'
+
 export default {
   name: 'VirtualCard',
+  mixins: [operationNotice],
   computed: {
     ...mapGetters({
       vcState: 'virtualCardStatus',
@@ -60,7 +63,7 @@ export default {
   methods: {
     ...mapMutations({
       changeState: 'changeVirtualCardState'
-    })
+    }),
   }
 }
 </script>
