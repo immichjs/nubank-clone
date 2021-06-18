@@ -8,6 +8,7 @@ export default new Vuex.Store({
     userName: 'Anon',
     balanceVisibilityStatus: true,
     virtualCardStatus: false,
+    loadingState: true,
 
     currentInvoice: 0,
     availableLimit: 0,
@@ -35,6 +36,7 @@ export default new Vuex.Store({
     username: state => state.userName,
     balanceVisibilityStatus: state => state.balanceVisibilityStatus,
     virtualCardStatus: state => state.virtualCardStatus,
+    loadingState: state => state.loadingState,
 
     currentInvoice: state => state.currentInvoice,
     availableLimit: state => state.availableLimit,
@@ -47,9 +49,17 @@ export default new Vuex.Store({
   mutations: {
     changeVisibilityStatusIcon: state => state.balanceVisibilityStatus = !state.balanceVisibilityStatus,
     changeVirtualCardState: (state, payload) => state[payload.name] = payload.status,
+    changeLoadingState: (state, payload) => state.loadingState = payload,
 
     SET_USERNAME: (state, payload) => state.userName = payload || state.userName,
     SET_LIMIT: (state, payload) => state.availableLimit = Number(payload) || 200,
     SET_BALANCE: (state, payload) => state.balanceAvailable = Number(payload) || 990,
   },
+  actions: {
+    loading: ({ commit }, payload) => {
+      setTimeout(() => {
+        commit('changeLoadingState', payload)
+      }, 3000)
+    }
+  }
 })

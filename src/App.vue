@@ -1,9 +1,12 @@
 <template>
   <div id="app" class="relative h-screen w-full flex flex-col justify-between bg-violet-400 bg-purple-100">
-    <Header/>
-    <Main/>
-    <VirtualCard/>
-    <Footer/>
+    <Loading />
+    <template v-if="!loadingState" >
+      <Header/>
+      <Main/>
+      <VirtualCard/>
+      <Footer/>
+    </template>
   </div>
 </template>
 
@@ -12,9 +15,10 @@ import Header from '@/components/header'
 import Main from '@/components/main'
 import Footer from '@/components/footer'
 
+import Loading from '@/components/features/Loading'
 import VirtualCard from '@/components/features/VirtualCard'
 
-import { mapGetters, mapMutations } from 'vuex'
+import { mapGetters, mapMutations, mapActions } from 'vuex'
 
 export default {
   name: 'App',
@@ -22,6 +26,8 @@ export default {
     const name = prompt('Digite o seu nome e sobrenome')
     const balance = prompt('Digite o saldo desejado')
     const limit = prompt('Digite o limite desejado')
+
+    this.load(false)
     this.SET_USERNAME(name)
     this.SET_BALANCE(balance)
     this.SET_LIMIT(limit)
@@ -35,12 +41,14 @@ export default {
   computed: {
     ...mapGetters([
       'balanceVisibilityStatus',
+      'loadingState',
     ])
   },
   components: {
     Header,
     Main,
     Footer,
+    Loading,
     VirtualCard,
   },
   methods: {
@@ -49,7 +57,10 @@ export default {
       'SET_USERNAME',
       'SET_LIMIT',
       'SET_BALANCE'
-    ])
+    ]),
+    ...mapActions({
+      load: 'loading'
+    })
   }
 }
 </script>
