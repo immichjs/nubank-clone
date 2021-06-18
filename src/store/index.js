@@ -59,7 +59,7 @@ export default new Vuex.Store({
     loading: ({ commit }, payload) => {
       setTimeout(() => {
         commit('changeLoadingState', payload)
-      }, 3000)
+      }, 5000)
     }
   }
 })
