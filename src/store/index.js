@@ -49,7 +49,7 @@ export default new Vuex.Store({
     getFooterListItems: state => state.footerListItems,
   },
   mutations: {
-    changeVisibilityStatusIcon: state => state.balanceVisibilityStatus = !state.balanceVisibilityStatus,
+    changeVisibilityStatusIcon: (state, payload) => payload ? state.balanceVisibilityStatus = payload : state.balanceVisibilityStatus = payload,
     changeVirtualCardState: (state, payload) => state[payload.name] = payload.status,
     changePayStatus: (state, payload) => state[payload.name] = status,
     changeLoadingState: (state, payload) => state.loadingState = payload,

@@ -3,11 +3,11 @@
     <div class="flex items-center justify-between h-16 truncate">
       <h1 class="text-2xl font-bold text-white-default w-1/2 truncate">Olá, {{ username }}</h1>
       <div class="flex gap-2">
-        <div :class="configIcons.divClasses" @click="changeVisibilityStatusIcon" v-if="balanceVisibilityStatus">
+        <div :class="configIcons.divClasses" @click="changeVisibilityStatusIcon(false)" v-if="balanceVisibilityStatus">
           <box-icon name='hide' :color="configIcons.colorIcons" />
         </div>
 
-        <div :class="configIcons.divClasses" @click="changeVisibilityStatusIcon" v-else>
+        <div :class="configIcons.divClasses" @click="changeVisibilityStatusIcon(true)" v-else>
           <box-icon name='show' :color="configIcons.colorIcons" />
         </div>
 

@@ -24,15 +24,29 @@ import { mapGetters, mapMutations, mapActions } from 'vuex'
 
 export default {
   name: 'App',
+  data () {
+    return {
+      userNubank: {}
+    }
+  },
   created () {
-    const name = prompt('Digite o seu nome e sobrenome')
-    const balance = prompt('Digite o saldo desejado')
-    const limit = prompt('Digite o limite desejado')
+    const nubankUserSaved = localStorage.getItem('nubank-user')
 
+    if (nubankUserSaved) {
+      this.userNubank = JSON.parse(nubankUserSaved)
+    } else {
+      this.userNubank.name = prompt('Digite o seu nome e sobrenome')
+      this.userNubank.balance = prompt('Digite o saldo desejado')
+      this.userNubank.limit = prompt('Digite o limite desejado')
+      this.userNubank.visibilityOfValues = this.balanceVisibilityStatus
+
+      localStorage.setItem('nubank-user', JSON.stringify(this.userNubank))
+    }
+    this.SET_USERNAME(this.userNubank.name)
+    this.SET_BALANCE(this.userNubank.balance)
+    this.SET_LIMIT(this.userNubank.limit)
+    this.changeVisibilityStatusIcon(this.userNubank.visibilityOfValues)
     this.load(false)
-    this.SET_USERNAME(name)
-    this.SET_BALANCE(balance)
-    this.SET_LIMIT(limit)
   },
   metaInfo: {
     title: 'Nubank | Clone',
@@ -56,6 +70,7 @@ export default {
   },
   methods: {
     ...mapMutations([
+      'changeVisibilityStatusIcon',
       'changeVisibilityStatus',
       'SET_USERNAME',
       'SET_LIMIT',
@@ -64,6 +79,12 @@ export default {
     ...mapActions({
       load: 'loading'
     })
+  },
+  watch: {
+    balanceVisibilityStatus () {
+      this.userNubank.visibilityOfValues = this.balanceVisibilityStatus
+      localStorage.setItem('nubank-user', JSON.stringify(this.userNubank))
+    }
   }
 }
 </script>
