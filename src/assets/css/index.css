@@ -33,6 +33,10 @@
     background-color: rgba(0, 0, 0, 0.08);
   }
 
+  .bg-violet-300 {
+    background-color: #800AD1;
+  }
+
   .bg-violet-400 {
     background-color: #830AD1;
   }

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-4 bg-white w-full h-auto rounded-sm p-6">
+  <div class="flex flex-col gap-4 bg-white w-full h-auto rounded p-6">
     <div class="flex gap-4 items-center font-medium">
       <box-icon name='donate-heart' color="#9CA3AF"></box-icon>
       <span class="text-gray-default text-sm">Empréstimo</span>

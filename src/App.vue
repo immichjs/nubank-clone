@@ -1,7 +1,8 @@
 <template>
   <div id="app" class="relative h-screen w-full flex flex-col justify-between bg-violet-400 bg-purple-100 scroll-x-none overflow-hidden">
-    <Loading />
-    <template v-if="!loadingState" >
+    <Start/>
+    <Loading/>
+    <template v-if="!loadStatus" >
       <Header/>
       <Main/>
       <Pay/>
@@ -17,6 +18,7 @@ import Main from '@/components/main'
 import Footer from '@/components/footer'
 
 import Loading from '@/components/features/Loading'
+import Start from '@/components/features/Start'
 import Pay from '@/components/features/Pay'
 import VirtualCard from '@/components/features/VirtualCard'
 
@@ -26,26 +28,19 @@ export default {
   name: 'App',
   data () {
     return {
-      userNubank: {}
+      userNubank: {},
     }
   },
   created () {
-    const nubankUserSaved = localStorage.getItem('nubank-user')
+    const nubankUserSaved = JSON.parse(localStorage.getItem('nubank-user'))
 
-    if (nubankUserSaved) {
-      this.userNubank = JSON.parse(nubankUserSaved)
-    } else {
-      this.userNubank.name = prompt('Digite o seu nome e sobrenome')
-      this.userNubank.balance = prompt('Digite o saldo desejado')
-      this.userNubank.limit = prompt('Digite o limite desejado')
-      this.userNubank.visibilityOfValues = this.balanceVisibilityStatus
+    nubankUserSaved && nubankUserSaved.cardIndex
+      ? this.userNubank = nubankUserSaved
+      : this.changeStartState(true)
 
-      localStorage.setItem('nubank-user', JSON.stringify(this.userNubank))
-    }
-    this.SET_USERNAME(this.userNubank.name)
-    this.SET_BALANCE(this.userNubank.balance)
-    this.SET_LIMIT(this.userNubank.limit)
+    this.setUser({ name: this.userNubank.name, balance: this.userNubank.balance, limit: this.userNubank.limit })
     this.changeVisibilityStatusIcon(this.userNubank.visibilityOfValues)
+    this.changeLoadingState(true)
     this.load(false)
   },
   metaInfo: {
@@ -55,12 +50,17 @@ export default {
     }
   },
   computed: {
-    ...mapGetters([
-      'balanceVisibilityStatus',
-      'loadingState',
-    ])
+    ...mapGetters({
+      balanceStatus: 'balanceVisibilityStatus',
+      loadStatus: 'loadingState',
+      balance: 'balanceAvailable',
+      limit: 'availableLimit',
+      username: 'username',
+      startPageState: 'startState'
+    })
   },
   components: {
+    Start,
     Header,
     Main,
     Footer,
@@ -70,20 +70,26 @@ export default {
   },
   methods: {
     ...mapMutations([
+      'changeStartState',
       'changeVisibilityStatusIcon',
       'changeVisibilityStatus',
+      'changeLoadingState',
       'SET_USERNAME',
       'SET_LIMIT',
-      'SET_BALANCE'
+      'SET_BALANCE',
+      'setUser'
     ]),
     ...mapActions({
       load: 'loading'
     })
   },
   watch: {
-    balanceVisibilityStatus () {
-      this.userNubank.visibilityOfValues = this.balanceVisibilityStatus
-      localStorage.setItem('nubank-user', JSON.stringify(this.userNubank))
+    balanceStatus () {
+      if (!this.startPageState) {
+        this.userNubank = JSON.parse(localStorage.getItem('nubank-user'))
+        this.userNubank.visibilityOfValues = this.balanceStatus
+        localStorage.setItem('nubank-user', JSON.stringify(this.userNubank))
+      }
     }
   }
 }

@@ -7,13 +7,13 @@
         <box-icon name="help-circle" color="#ccc" @click="notWork"/>
       </div>
 
-      <div class="bg-violet-400 mt-10 rounded-xl mx-8 p-8 flex flex-col gap-6">
+      <div class="bg-violet-400 mt-10 rounded-xl mx-8 p-8 flex flex-col gap-12">
         <div class="flex justify-between items-center">
           <img src="../../assets/img/nubank-logo-white.png" width="32">
           <img src="../../assets/img/mastercard-logo.png" width="48">
         </div>
         <div class="flex">
-          <p class="text-justify text-white font-semibold text-xl w-full">5264 6101 4342 5037</p>
+          <p class="text-justify text-white font-semibold w-full md:text-lg">{{ creditCard[cardIndex].number }}</p>
           <box-icon name='copy' color="#fff" class="cursor-pointer" @click="notWork"></box-icon>
         </div>
       </div>
@@ -21,16 +21,16 @@
       <div class="px-14 mt-8">
         <div class="py-3 border-b border-gray-100">
           <span class="text-gray-400 text-xs font-medium">Nome do Titular</span>
-          <p class="font-semibold text-violet-400">{{ username }}</p>
+          <p class="font-semibold text-violet-400 uppercase">{{ username }}</p>
         </div>
         <div class="flex justify-between py-3">
           <div>
             <span class="text-gray-400 text-xs font-medium">Data de vencimento</span>
-            <p class="font-semibold text-violet-400">15/12/2021</p>
+            <p class="font-semibold text-violet-400">{{ creditCard[cardIndex].cardExpiry }}</p>
           </div>
           <div>
             <span class="text-gray-400 text-xs font-medium">Cód. de Segurança</span>
-            <p class="font-semibold text-violet-400">254</p>
+            <p class="font-semibold text-violet-400">{{ creditCard[cardIndex].cvv }}</p>
           </div>
         </div>
       </div>
@@ -60,13 +60,15 @@ export default {
     ...mapGetters({
       vcState: 'virtualCardStatus',
       username: 'username',
+      creditCard: 'creditCardNumbers',
+      cardIndex: 'cardIndex'
     })
   },
   methods: {
     ...mapMutations({
       changeState: 'changeVirtualCardState'
     }),
-  }
+  },
 }
 </script>
 

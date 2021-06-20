@@ -1,5 +1,5 @@
 <template funcional>
-  <div class="flex flex-col gap-4 bg-white w-full h-auto rounded-sm p-6">
+  <div class="flex flex-col gap-4 bg-white w-full h-auto rounded p-6">
     <div class="flex gap-4 items-center font-medium">
       <img
         src="@/assets/img/present.svg"
