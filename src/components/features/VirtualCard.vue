@@ -1,6 +1,6 @@
 <template>
   <transition mode="out-in" enter-active-class="animate__animated animate__slideInUp" leave-active-class="animate__animated animate__slideOutDown">
-    <div class="absolute w-full bottom-0 bg-white h-100vh-16px rounded-t-lg" v-if="vcState">
+    <div class="absolute w-full bottom-0 bg-white h-100vh-16px rounded-t-lg"  v-if="vcState">
       <div class="flex justify-between items-center p-2 rounded-t-lg">
         <box-icon name='x' size="md" color="#ccc" class="cursor-pointer" @click="changeState({ name: 'virtualCardStatus', status: false })"></box-icon>
         <h1 class="text-center uppercase text-xs font-semibold text-gray-400">Cartão Virtual</h1>

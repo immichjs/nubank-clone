@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="relative h-screen w-full flex flex-col justify-between bg-violet-400 bg-purple-100">
+  <div id="app" class="relative h-screen w-full flex flex-col justify-between bg-violet-400 bg-purple-100 scroll-x-none overflow-hidden">
     <Loading />
     <template v-if="!loadingState" >
       <Header/>

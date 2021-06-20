@@ -93,3 +93,15 @@
     }
   }
 }
+
+.animate__animated.animate__slideInUp {
+  --animate-duration: 0.5s;
+}
+
+.animate__animated.animate__slideOutDown {
+  --animate-duration: 0.5s;
+}
+
+.animate__animated.animate__slideInUp::-webkit-scrollbar {
+  display: none;
+}
