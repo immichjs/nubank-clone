@@ -7,6 +7,7 @@ import store from './store'
 
 import 'boxicons'
 import './assets/css/index.css'
+import 'animate.css'
 
 Vue.use(VueDragscroll)
 Vue.use(VueCurrencyFilter, {
