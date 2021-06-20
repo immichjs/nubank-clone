@@ -14,7 +14,7 @@
           </div>
           <box-icon type='solid' name='chevron-right' color="#ccc" size="16px" class="w-32 flex justify-center"></box-icon>
         </div>
-        <div class="flex items-center border" @click="notWork">
+        <div class="flex items-center border-b" @click="notWork">
           <box-icon name="credit-card-alt" color="#830AD1" class="w-20"/>
           <div class="text-sm text-gray-500 w-full">
             <span class="font-semibold text-gray-900">Pagar fatura do cartão</span>
