@@ -4,7 +4,7 @@ O intuíto desse projeto, é clonar o app do Nubank aos poucos, primeiramente a 
 
 Logo abaixo você poderá ver algumas telas já existentes no projeto com funcionalidades (ou não).
 <p align="start">
-    <img src="https://i.imgur.com/RdjtL4H.png">
+    <img src="https://i.imgur.com/0n3EbFh.png">
 </p>
 
 ## Começando
