@@ -3,6 +3,7 @@
     <Start/>
     <Loading/>
     <template v-if="!loadStatus" >
+      <Config/>
       <Header/>
       <Main/>
       <Pay/>
@@ -17,6 +18,7 @@ import Header from '@/components/header'
 import Main from '@/components/main'
 import Footer from '@/components/footer'
 
+import Config from '@/components/features/Config'
 import Loading from '@/components/features/Loading'
 import Start from '@/components/features/Start'
 import Pay from '@/components/features/Pay'
@@ -61,6 +63,7 @@ export default {
   },
   components: {
     Start,
+    Config,
     Header,
     Main,
     Footer,

@@ -61,6 +61,9 @@ export default {
       localStorage.setItem('nubank-user', JSON.stringify(this.userNubank))
       
       this.changeLoadingState(true)
+      this.user.name = ''
+      this.user.balance = ''
+      this.user.limit = ''
       this.load()
     },
     ...mapActions({

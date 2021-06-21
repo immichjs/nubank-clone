@@ -12,6 +12,7 @@ export default new Vuex.Store({
     payStatus: false,
     virtualCardStatus: false,
     loadingState: false,
+    configState: false,
 
     currentInvoice: 0,
     availableLimit: 0,
@@ -33,6 +34,18 @@ export default new Vuex.Store({
       { icon: 'coin', name: 'Cobrar', id: 11, nameState: '' },
       { icon: 'donate-heart', name: 'Doação', id: 12, nameState: '' },
       { icon: 'help-circle', name: 'Me ajuda', id: 13, nameState: '' },
+    ],
+
+    configItems: [
+      { icon: 'mail-send', name: 'Notificações', id: 0 },
+      { icon: 'help-circle', name: 'Me ajuda', id: 1, nameState: 'payStatus' },
+      { icon: 'user', name: 'Perfil', id: 2 },
+      { icon: 'coin-stack', name: 'Configurar conta', id: 3 },
+      { icon: 'move', name: 'Minhas chaves Pix', id: 4 },
+      { icon: 'credit-card', name: 'Configurar Cartão', id: 5 },
+      { icon: 'store', name: 'Pedir conta PJ', id: 6, nameState: 'virtualCardStatus' },
+      { icon: 'mobile-alt', name: 'Configurações do app', id: 7 },
+      { icon: 'help-circle', name: 'Sobre', id: 8 },
     ],
     
     creditCardNumbers: [
@@ -65,6 +78,7 @@ export default new Vuex.Store({
     payStatus: state => state.payStatus,
     virtualCardStatus: state => state.virtualCardStatus,
     loadingState: state => state.loadingState,
+    configState: state => state.configState,
 
     currentInvoice: state => state.currentInvoice,
     availableLimit: state => state.availableLimit,
@@ -73,6 +87,7 @@ export default new Vuex.Store({
     loanAvailable: state => state.loanAvailable,
 
     getFooterListItems: state => state.footerListItems,
+    configItems: state => state.configItems,
 
     creditCardNumbers: state => state.creditCardNumbers,
     cardIndex: state => state.cardIndex
@@ -83,6 +98,7 @@ export default new Vuex.Store({
     changeVirtualCardState: (state, payload) => state[payload.name] = payload.status,
     changePayStatus: (state, payload) => state[payload.name] = status,
     changeLoadingState: (state, payload) => state.loadingState = payload,
+    changeConfigState: (state, payload) => state.configState = payload,
 
     setUser: (state, payload) => {
       state.userName = payload.name || state.username

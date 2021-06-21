@@ -11,7 +11,7 @@
           <box-icon name='show' :color="configIcons.colorIcons" />
         </div>
 
-        <div :class="configIcons.divClasses" @click="notWork">
+        <div :class="configIcons.divClasses" @click="changeConfigState(true)">
           <box-icon name='cog' :color="configIcons.colorIcons" />
         </div>
       </div>
@@ -42,7 +42,8 @@ export default {
   },
   methods: {
     ...mapMutations([
-      'changeVisibilityStatusIcon'
+      'changeVisibilityStatusIcon',
+      'changeConfigState'
     ])
   }
 }
