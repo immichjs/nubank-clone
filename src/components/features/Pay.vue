@@ -47,7 +47,7 @@ export default {
   },
   methods: {
     ...mapMutations({
-      changeState: 'changeVirtualCardState'
+      changeState: 'changeFooterItemState'
     }),
   }
 }

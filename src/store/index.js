@@ -10,6 +10,7 @@ export default new Vuex.Store({
     startState: false,
     balanceVisibilityStatus: true,
     payStatus: false,
+    depositStatus: false,
     virtualCardStatus: false,
     loadingState: false,
     configState: false,
@@ -25,7 +26,7 @@ export default new Vuex.Store({
       { icon: 'barcode', name: 'Pagar', id: 1, nameState: 'payStatus' },
       { icon: 'user-plus', name: 'Indicar amigos', id: 2, nameState: '' },
       { icon: 'coin', name: 'Transferir', id: 3, nameState: '' },
-      { icon: 'coin', name: 'Depositar', id: 4, nameState: '' },
+      { icon: 'coin', name: 'Depositar', id: 4, nameState: 'depositStatus' },
       { icon: 'donate-heart', name: 'Empréstimos', id: 5, nameState: '' },
       { icon: 'credit-card', name: 'Cartão virtual', id: 6, nameState: 'virtualCardStatus' },
       { icon: 'mobile-alt', name: 'Recarga de celular', id: 7, nameState: '' },
@@ -76,6 +77,7 @@ export default new Vuex.Store({
     username: state => state.userName,
     balanceVisibilityStatus: state => state.balanceVisibilityStatus,
     payStatus: state => state.payStatus,
+    depositStatus: state => state.depositStatus,
     virtualCardStatus: state => state.virtualCardStatus,
     loadingState: state => state.loadingState,
     configState: state => state.configState,
@@ -95,10 +97,10 @@ export default new Vuex.Store({
   mutations: {
     changeStartState: (state, payload) => state.startState = payload,
     changeVisibilityStatusIcon: (state, payload) => payload ? state.balanceVisibilityStatus = payload : state.balanceVisibilityStatus = payload,
-    changeVirtualCardState: (state, payload) => state[payload.name] = payload.status,
-    changePayStatus: (state, payload) => state[payload.name] = status,
+    changeFooterItemState: (state, payload) => state[payload.name] = payload.status,
     changeLoadingState: (state, payload) => state.loadingState = payload,
     changeConfigState: (state, payload) => state.configState = payload,
+    depositState: (state, payload) => state.depositStatus = payload,
 
     setUser: (state, payload) => {
       state.userName = payload.name || state.username

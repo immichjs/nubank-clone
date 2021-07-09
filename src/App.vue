@@ -7,6 +7,7 @@
       <Header/>
       <Main/>
       <Pay/>
+      <Deposit/>
       <VirtualCard/>
       <Footer/>
     </template>
@@ -22,6 +23,7 @@ import Config from '@/components/features/Config'
 import Loading from '@/components/features/Loading'
 import Start from '@/components/features/Start'
 import Pay from '@/components/features/Pay'
+import Deposit from '@/components/features/Deposit'
 import VirtualCard from '@/components/features/VirtualCard'
 
 import { mapGetters, mapMutations, mapActions } from 'vuex'
@@ -69,6 +71,7 @@ export default {
     Footer,
     Loading,
     Pay,
+    Deposit,
     VirtualCard,
   },
   methods: {
