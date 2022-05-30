@@ -1,13 +1,13 @@
 # Nubank Clone
 
-O intuíto desse projeto, é clonar o app do Nubank aos poucos, primeiramente a interface e assim que possível melhorar as funcionalidades parecidas com a do próprio app.
+O intuito desse projeto, é clonar o app do Nubank gradualmente, primeiro desenvolvendo a interface e assim que possível melhorar as funcionalidades parecidas com a do próprio app.
 
 Logo abaixo você poderá ver algumas telas já existentes no projeto com funcionalidades (ou não).
 <p align="start">
     <img src="https://i.imgur.com/0n3EbFh.png">
 </p>
 
-## Começando
+## Iniciando
 
 Para inicilizar esse projeto, é necessário ter duas ferramentas instaladas em sua máquina, o [Git](https://git-scm.com/) e o [Node.js](https://nodejs.org/).
 
@@ -18,7 +18,7 @@ $ git clone git@github.com:immichjs/nubank-clone.git
 $ cd nubank-clone
 ```
 
-- Logo após, instale todas as dependencias com:
+- Logo após, instale todas as dependências com:
 ```
 $ npm i
 ```
@@ -28,7 +28,7 @@ $ npm i
 $ npm run serve
 ```
 
-### Compila todo o projeto para produção
+### Compile todo o projeto para produção
 ```
 $ npm run build
 ```
